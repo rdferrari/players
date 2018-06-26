@@ -1,0 +1,2 @@
+# boilerplate
+Meteor boilerplate
