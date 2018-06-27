@@ -10,11 +10,10 @@ import PlayerList from "./PlayerList";
 
 export default class App extends Component {
   render() {
-    let scoreTitle = "Score NavBar";
     return (
       <div>
         <header>
-          <NavBar title={this.props.scoreTitle} />
+          <NavBar title={this.props.title} />
         </header>
         {/* The players refers to the let players = Players.find().fetch(); */}
         <PlayerList players={this.props.players} />
@@ -25,6 +24,6 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  title: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
   players: PropTypes.array.isRequired
 };
