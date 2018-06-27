@@ -1,10 +1,13 @@
 import React from "react";
 import { Meteor } from "meteor/meteor";
 import { render } from "react-dom";
+
+// The Tracker.autorun prevent the empty data load
 import { Tracker } from "meteor/tracker";
 
 import { Players } from "./../imports/api/players";
 
+// Iterate - map the data from Mongo
 const renderPlayers = playersList =>
   playersList.map(player => {
     return (
