@@ -1,2 +1,3 @@
-# boilerplate
-Meteor boilerplate
+# Players App
+
+Basic Meteor + React app.
