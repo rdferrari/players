@@ -16,8 +16,10 @@ export default class App extends Component {
           <NavBar title={this.props.title} />
         </header>
         {/* The players refers to the let players = Players.find().fetch(); */}
-        <PlayerList players={this.props.players} />
-        <AddPlayer />
+        <div className="wrapper">
+          <PlayerList players={this.props.players} />
+          <AddPlayer />
+        </div>
       </div>
     );
   }

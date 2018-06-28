@@ -3,12 +3,9 @@ import { Meteor } from "meteor/meteor";
 import { render } from "react-dom";
 import { Tracker } from "meteor/tracker";
 // api
-import { Players } from "./../imports/api/players";
+import { Players, calculatePositions } from "./../imports/api/players";
 // Components
 import App from "./../imports/ui/App";
-// import NavBar from "./../imports/ui/NavBar";
-// import AddPlayer from "./../imports/ui/AddPlayer";
-// import PlayerList from "./../imports/ui/PlayerList";
 
 Meteor.startup(() => {
   Tracker.autorun(() => {
@@ -20,9 +17,10 @@ Meteor.startup(() => {
         }
       }
     ).fetch();
+    let positioPlayers = calculatePositions(players);
     let scoreTitle = "Score NavBar";
     render(
-      <App title={scoreTitle} players={players} />,
+      <App title={scoreTitle} players={positioPlayers} />,
       document.getElementById("app")
     );
   });
